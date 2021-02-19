@@ -26,6 +26,16 @@ export const StyleLibrary = [
             strokeColor: "#269abc"
         },
 
+        spinner:{
+
+            fillColor: "#5bc0de",
+            rounded: "1",
+            strokeColor: "#269abc",
+            shape: "image",
+            image: "assets/icon/spinner.svg"
+
+        },
+
         dropdown: {
             dropdownBox: {
                 opacity: "0",

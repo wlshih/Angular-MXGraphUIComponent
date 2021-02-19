@@ -3,6 +3,7 @@ import { Configuration } from '../config/GraphConfiguration';
 import { ButtonStrategy } from '../strategy/ButtonStrategy';
 import { ICreateComponentStrategy } from '../strategy/ICreateComponentStrategy';
 import { TableStrategy } from '../strategy/TableStrategy';
+import { ProgressSpinnerStrategy } from '../strategy/ProgressSpinnerStrategy';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,11 @@ export class GraphEditorService {
     }
     else if(uiComponent['type'] == 'table') {
       this.setStrategy(new TableStrategy());
+    }
+    // ProgressSpinner
+    else if(uiComponent['type'] == 'progress_spinner') {
+      // set strategy
+      this.setStrategy(new ProgressSpinnerStrategy());
     }
     let parent = this.editor.graph.defaultParent;
     this.createComponentStrategy.createComponent(this, uiComponent, parent);
